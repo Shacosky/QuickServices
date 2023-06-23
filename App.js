@@ -1,20 +1,40 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useEffect, useState } from "react";
+import { View } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 
-export default function App() {
+import SplashScreen from "./screens/SplashScreen";
+import HomeScreen from "./screens/HomeScreen";
+import AboutScreen from "./screens/AboutScreen";
+
+const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulating a loading delay for the splash screen
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000); // Duration of the splash screen in milliseconds
+  }, []);
+
+  const Stack = createStackNavigator();
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        {isLoading ? (
+          <Stack.Screen
+            name="Splash"
+            component={SplashScreen}
+            options={{ headerShown: false }}
+          />
+        ) : (
+          <Stack.Screen name="Home" component={HomeScreen} />
+        )}
+      </Stack.Navigator>
+      <Stack.Screen name="About" component={AboutScreen} />
+    </NavigationContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
