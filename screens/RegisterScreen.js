@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import styles from '../styles/qsStyles.js'; // Asegúrate de importar tus estilos desde el archivo adecuado
+import styles from '../styles/QSStyles.js'; // Asegúrate de importar tus estilos desde el archivo adecuado
 
 const RegisterScreen = () => {
   const navigation = useNavigation(); // Obtiene el objeto de navegación

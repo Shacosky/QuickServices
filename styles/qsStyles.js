@@ -1,12 +1,42 @@
 import { StyleSheet } from "react-native";
 
+// crear constante de colores negro, gris y blanco
+
+const colors = {
+  negro: '#000000',
+  blanco: '#ffffff',
+  gris: '#808080'
+}
+
+
+//color rojo
+
+
 const styles = StyleSheet.create({
+  mainView:{
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: colors.negro
+  },
   container: {
     flex: 1,
     backgroundColor: "#fff",
     justifyContent: "center",
     alignItems: "center",
     padding: 20,
+  },
+  button: {
+    width: "100%",
+    backgroundColor: colors.gris,
+    borderRadius: 35,
+    padding: 10,
+    alignItems: "center",
+  },
+  buttonText: {
+    color: "#fff",
+    fontSize: 16,
+    fontWeight: "bold",
   },
   logo: {
     width: 150,
@@ -15,22 +45,13 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   inputContainer: {
-    width: "100%",
+    width: "70%",
     marginBottom: 20,
-  },
-  input: {
-    width: "100%",
-    height: 40,
-    borderColor: "#ccc",
-    borderWidth: 1,
-    borderRadius: 5,
-    paddingHorizontal: 10,
-    marginBottom: 10,
   },
   buttonStyle: {
     width: "100%",
     backgroundColor: "#007bff",
-    borderRadius: 5,
+    borderRadius: 35,
     padding: 10,
     alignItems: "center",
   },
@@ -41,7 +62,7 @@ const styles = StyleSheet.create({
   },
   signUpText: {
     marginTop: 20,
-    color: "#333",
+    color: colors.blanco,
     fontSize: 16,
   },
   title: {
@@ -52,16 +73,18 @@ const styles = StyleSheet.create({
   input: {
     width: "100%",
     height: 40,
-    borderColor: "#ccc",
+    borderColor: colors.blanco,
     borderWidth: 1,
-    borderRadius: 5,
+    borderRadius: 35,
     paddingHorizontal: 10,
     marginBottom: 10,
+    placeholderTextColor: colors.blanco
+
   },
   registerButton: {
     width: "100%",
     backgroundColor: "#007bff",
-    borderRadius: 5,
+    borderRadius: 35,
     padding: 10,
     alignItems: "center",
   },
