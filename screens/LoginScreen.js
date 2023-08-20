@@ -6,13 +6,30 @@ import {
   TouchableOpacity,
   StyleSheet,
   Image,
-  ScrollView
+  ScrollView,
 } from "react-native";
 
+import { useNavigation } from "@react-navigation/native";
+
 const LoginScreen = () => {
+  const navigation = useNavigation();
+
+  const handleLogin = () => {
+    // Perform login logic if needed
+
+    navigation.navigate("Register");
+  };
+
+  const handleRegister = () => {
+    navigation.navigate("Register");
+  };
+
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Image source={require("../assets/Logo_Perfil.png")} style={styles.logo} />
+      <Image
+        source={require("../assets/Logo_Perfil.png")}
+        style={styles.logo}
+      />
       <View style={styles.content}>
         <Text style={styles.title}>QuickServices</Text>
         <Text style={styles.subtitle}>
@@ -30,7 +47,7 @@ const LoginScreen = () => {
           placeholderTextColor="gray"
           secureTextEntry
         />
-        <TouchableOpacity style={styles.loginButton}>
+        <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
           <Text style={styles.buttonText}>INGRESAR</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.forgotPasswordContainer}>
@@ -38,8 +55,12 @@ const LoginScreen = () => {
         </TouchableOpacity>
       </View>
       <View style={styles.registerContainer}>
-        <Text style={styles.registerSubtitle}>¿Primera vez en QuickServices?</Text>
-        <Text style={styles.registerText}>REGISTRARSE AQUÍ</Text>
+        <Text style={styles.registerSubtitle}>
+          ¿Primera vez en QuickServices?
+        </Text>
+        <Text style={styles.registerText} onPress={handleRegister}>
+          REGISTRARSE AQUÍ
+        </Text>
       </View>
     </ScrollView>
   );
@@ -56,24 +77,24 @@ const styles = StyleSheet.create({
   logo: {
     width: 200, // Ancho de la imagen
     height: 200, // Alto de la imagen
-    resizeMode: "contain", // Redimensionar la imagen  
+    resizeMode: "contain", // Redimensionar la imagen
   },
   content: {
     width: "90%", // Ancho relativo al dispositivo
-    alignItems: 'center', // Alineado al centro
+    alignItems: "center", // Alineado al centro
   },
   title: {
     fontSize: 32,
     fontWeight: "bold",
     marginBottom: 10,
     color: "white",
-    textAlign: 'center', // Alineado al centro
+    textAlign: "center", // Alineado al centro
   },
   subtitle: {
     fontSize: 16,
     marginBottom: 20,
     color: "white",
-    textAlign: 'center', // Alineado al centro
+    textAlign: "center", // Alineado al centro
   },
   input: {
     width: "100%", // Ancho relativo al dispositivo
@@ -85,7 +106,7 @@ const styles = StyleSheet.create({
     borderRadius: 35,
     color: "white",
     backgroundColor: "black",
-    alignSelf: 'center', // Alineado al centro
+    alignSelf: "center", // Alineado al centro
   },
   loginButton: {
     backgroundColor: "white",
@@ -94,7 +115,7 @@ const styles = StyleSheet.create({
     borderRadius: 35,
     marginTop: 20,
     width: "80%",
-    alignSelf: 'center', // Alineado al centro
+    alignSelf: "center", // Alineado al centro
   },
   buttonText: {
     color: "black",
@@ -103,8 +124,8 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   forgotPasswordContainer: {
-    width: '100%', // Ancho relativo al dispositivo
-    alignSelf: 'flex-end', // Alineado a la derecha
+    width: "100%", // Ancho relativo al dispositivo
+    alignSelf: "flex-end", // Alineado a la derecha
     marginTop: 10,
     paddingRight: 20, // Espaciado derecho
   },
@@ -124,12 +145,12 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textTransform: "uppercase",
     color: "white",
-    textDecorationLine: "underline",
     marginBottom: 5, // Espaciado inferior
   },
   registerText: {
     fontSize: 16,
     color: "white",
+    textDecorationLine: "underline",
   },
 });
 
