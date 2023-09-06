@@ -24,6 +24,11 @@ const LoginScreen = () => {
     navigation.navigate("Register");
   };
 
+  const forgotPassword = () => {
+    // Implementar lógica de recuperación de contraseña aquí
+    navigation.navigate("ForgotPassword");
+  };
+
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Image
@@ -50,7 +55,10 @@ const LoginScreen = () => {
         <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
           <Text style={styles.buttonText}>INGRESAR</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.forgotPasswordContainer}>
+        <TouchableOpacity
+          style={styles.forgotPasswordContainer}
+          onPress={forgotPassword}
+        >
           <Text style={styles.linkText}>Olvidé mi contraseña</Text>
         </TouchableOpacity>
       </View>

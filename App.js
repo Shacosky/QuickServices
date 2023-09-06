@@ -13,7 +13,7 @@ const App = () => {
       <Stack.Navigator initialRouteName="LoginScreen" screenOptions={{headerShown: false}}>
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Register" component={RegisterScreen} />
-        <Stack.Screen name="ForgotPasswordScreen" component={ForgotPasswordScreen} />
+        <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
         
         {/* <Stack.Screen name="Inicio" component={Inicio} /> */}
         {/* Agrega aquí otras pantallas de navegación si es necesario */}
