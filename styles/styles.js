@@ -1,6 +1,17 @@
 import { StyleSheet } from 'react-native';
 
-let colorNegro = '#000000';
+const colors = {
+  negro: '#000000',
+  blanco: '#FFFFFF',
+  gris: '#DADADA'
+}
+
+const fonts = {
+  regular: 'Roboto-Regular',
+  bold: 'Roboto-Bold',
+  italic: 'Roboto-Italic',
+};
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -33,30 +44,18 @@ const styles = StyleSheet.create({
     color: '#007aff',
   },
   button: {
-    backgroundColor: '#ff9500', // Naranja
+    backgroundColor: colors.gris, // Naranja
     paddingVertical: 12,
     paddingHorizontal: 20,
     borderRadius: 5,
     marginBottom: 10,
   },
   buttonText: {
-    color: '#fff',
+    color: colors.negro,
     fontSize: 16,
     fontWeight: 'bold',
     textAlign: 'center',
-  },
-  registerButton: {
-    backgroundColor: '#4cd964', // Verde
-    paddingVertical: 12,
-    paddingHorizontal: 20,
-    borderRadius: 5,
-  },
-  registerButtonText: {
-    color: '#fff',
-    fontSize: 16,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
+  } 
 });
 
 export default styles;

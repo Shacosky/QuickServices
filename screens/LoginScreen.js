@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { View, Text, Image, TextInput, TouchableOpacity } from "react-native";
-import styles from "../styles/qsStyles.js"; // Asegúrate de importar tus estilos desde el archivo adecuado
+import styles from "../styles/styles.js"; // Asegúrate de importar tus estilos desde el archivo adecuado
 import { useNavigation } from "@react-navigation/native";
 
 const LoginScreen = () => {
-  const [username, setUsername] = useState("");
+  const [correoElectronico, setCorreoElectronico] = useState("");
   const [password, setPassword] = useState("");
   const navigation = useNavigation();
 
@@ -20,13 +20,18 @@ const LoginScreen = () => {
 
   return (
     <View style={styles.container}>
+      <Text style={styles.title}>QuickServices</Text>
+
       <Image source={require("../assets/icon.png")} style={styles.logo} />
+      <View style={{ flex: 1, backgroundColor: "red" }} />
+      <View style={{ flex: 2, backgroundColor: "darkorange" }} />
+      <View style={{ flex: 3, backgroundColor: "green" }} />
 
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
-          placeholder="Nombre de usuario"
-          onChangeText={(text) => setUsername(text)}
+          placeholder="Correo electrónico"
+          onChangeText={(text) => setCorreoElectronico(text)}
         />
         <TextInput
           style={styles.input}
@@ -37,15 +42,15 @@ const LoginScreen = () => {
       </View>
 
       <TouchableOpacity style={styles.buttonStyle} onPress={handleLogin}>
-        <Text style={styles.buttonStyleText}>Iniciar sesión</Text>
+        <Text style={styles.buttonStyleText}>INGRESAR</Text>
       </TouchableOpacity>
 
       {/* <TouchableOpacity style={styles.buttonStyle} onPress={handleLogin}>
         <Text style={styles.signUpText}>¿No tienes una cuenta? Regístrate</Text>
       </TouchableOpacity> */}
 
-      <TouchableOpacity style={styles.registerButton} onPress={handleRegister}>
-        <Text style={styles.registerButtonText}>Registrarse</Text>
+      <TouchableOpacity style={styles.button} onPress={handleRegister}>
+        <Text style={styles.buttonText}>INGRESAR</Text>
       </TouchableOpacity>
     </View>
   );
