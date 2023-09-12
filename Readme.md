@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Crea un archivo basico de readme de aplicaciones moviles hechas con react native
 
 # QuickService
@@ -32,3 +33,6 @@ q
 
    ```bash
    git clone https://github.com/Shacosky/QuickService.git
+=======
+clonar repositorio y crear su propia rama.
+>>>>>>> eadbef1b3e4bf6dd08d26801249b2009430703ea
