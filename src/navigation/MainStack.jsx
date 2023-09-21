@@ -1,13 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { View } from "react-native";
+import {
+  createStackNavigator,
+  TransitionPresets,
+} from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
+import HomeScreen from "../screens/HomeScreen";
+import SplashScreen from "../screens/SplashScreen";
 
-import SplashScreen from "./screens/SplashScreen";
-import HomeScreen from "./screens/HomeScreen";
-import AboutScreen from "./screens/AboutScreen";
+const Stack = createStackNavigator();
 
-const App = () => {
+const customScreenOptions = {
+  ...TransitionPresets.SlideFromRightIOS,
+  gestureDirection: "horizontal",
+};
+
+export default function MainStack() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -17,11 +24,14 @@ const App = () => {
     }, 1000); // Duration of the splash screen in milliseconds
   }, []);
 
-  const Stack = createStackNavigator();
-
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false,
+          ...customScreenOptions,
+        }}
+      >
         {isLoading ? (
           <Stack.Screen
             name="Splash"
@@ -32,9 +42,6 @@ const App = () => {
           <Stack.Screen name="Home" component={HomeScreen} />
         )}
       </Stack.Navigator>
-      <Stack.Screen name="About" component={AboutScreen} />
     </NavigationContainer>
   );
-};
-
-export default App;
+}
