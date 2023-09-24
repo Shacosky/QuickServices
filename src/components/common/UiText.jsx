@@ -20,6 +20,7 @@ const UiText = ({
     size === "subtitle" && styles.subtitle,
     size === "extraLarge" && styles.extraLarge,
     fontWeight === "bold" && styles.bold,
+    fontWeight === "semibold" && styles.semiBold,
     style,
   ];
 
@@ -38,6 +39,8 @@ const styles = StyleSheet.create({
   bold: {
     fontWeight: "bold",
   },
+
+  semiBold: { fontWeight: 500 },
   small: {
     fontSize: 14,
   },
