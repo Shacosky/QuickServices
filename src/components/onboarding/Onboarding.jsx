@@ -2,47 +2,50 @@ import { View, Text, StyleSheet, Image } from "react-native";
 import React, { useEffect, useState } from "react";
 import UiText from "../common/UiText";
 import UiButton from "../common/UiButton";
-import catering from '../../assets/services/catering.webp'
-import lavadoautos from '../../assets/services/lavadoautos.webp'
-import limpiezaPiscina from '../../assets/services/limpiezaPiscina.webp'
-import remodelacion from '../../assets/services/remodelacion.webp'
-import jardineria from '../../assets/services/jardineria.webp'
-import limpieza from '../../assets/services/limpieza.webp'
-import gasfiteria from '../../assets/services/gasfiteria.webp'
+import catering from "../../assets/services/catering.webp";
+import lavadoautos from "../../assets/services/lavadoautos.webp";
+import limpiezaPiscina from "../../assets/services/limpiezaPiscina.webp";
+import remodelacion from "../../assets/services/remodelacion.webp";
+import jardineria from "../../assets/services/jardineria.webp";
+import limpieza from "../../assets/services/limpieza.webp";
+import gasfiteria from "../../assets/services/gasfiteria.webp";
+import { useNavigation } from "@react-navigation/native";
+
+const categories = [
+  {
+    category: "Limpieza de hogar",
+    imgUrl: limpieza,
+  },
+  {
+    category: "Limpia piscina",
+    imgUrl: limpiezaPiscina,
+  },
+  {
+    category: "Limpieza de Auto",
+    imgUrl: lavadoautos,
+  },
+  {
+    category: "Jardinería",
+    imgUrl: jardineria,
+  },
+  {
+    category: "Eventos",
+    imgUrl: catering,
+  },
+  {
+    category: "Gasfitería",
+    imgUrl: gasfiteria,
+  },
+  {
+    category: "Remodelación",
+    imgUrl: remodelacion,
+  },
+];
 
 const Onboarding = () => {
-  const categories = [
-    {
-      category: "Limpieza de hogar",
-      imgUrl: limpieza
-    },
-    {
-      category: "Limpia piscina",
-      imgUrl: gasfiteria
-    },
-    {
-      category: "Limpieza de Auto",
-      imgUrl:limpiezaPiscina
-    },
-    {
-      category: "Jardinería",
-      imgUrl:jardineria
-    },
-    {
-      category: "Eventos",
-      imgUrl:catering
-    },
-    {
-      category: "Gasfitería",
-      imgUrl: gasfiteria
-    },
-    {
-      category: "Remodelación",
-      imgUrl:remodelacion
-    },
-  ];
 
   const [selectedCategory, setSelectedCategory] = useState(0);
+  const navigation = useNavigation();
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -51,7 +54,6 @@ const Onboarding = () => {
       );
     }, 2000);
 
-    // Limpia el intervalo cuando el componente se desmonta o cuando se actualiza el efecto.
     return () => clearInterval(intervalId);
   }, []);
 
@@ -63,6 +65,7 @@ const Onboarding = () => {
           style={{ width: "100%" }}
           rounded
           text="Iniciar sesión para comenzar"
+          onPress={() => navigation.navigate("Login")}
         />
       </View>
       <View style={styles.containerService}>
@@ -136,8 +139,7 @@ const styles = StyleSheet.create({
   containerImage: {
     flex: 1,
     height: "auto",
-    elevation: 1
-    ,
+    elevation: 1,
     borderRadius: 16,
   },
   carousel: {
