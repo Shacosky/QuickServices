@@ -6,6 +6,9 @@ import {
 import { NavigationContainer } from "@react-navigation/native";
 import HomeScreen from "../screens/HomeScreen";
 import SplashScreen from "../screens/SplashScreen";
+import Login from "../screens/auth/Login";
+import SignIn from "../screens/auth/SignIn";
+import ForgotPassword from "../screens/auth/ForgotPassword";
 
 const Stack = createStackNavigator();
 
@@ -41,6 +44,9 @@ export default function MainStack() {
         ) : (
           <Stack.Screen name="Home" component={HomeScreen} />
         )}
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="SignIn" component={SignIn} />
+        <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
       </Stack.Navigator>
     </NavigationContainer>
   );
