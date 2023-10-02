@@ -15,7 +15,7 @@ const ReservesScreen = () => {
           <UiText >Todavía no tienes ninguna reserva.</UiText>
           <UiText >¿Qué estás esperando para comenzar?</UiText>
         </View>
-        <UiButton rounded text={"RESERVA AQUÍ"} style={{width:'85%', alignSelf:'center'}} />
+        <UiButton rounded text={"RESERVA AQUÍ"} style={{width:'85%', alignSelf:'center'}}onPress={() => navigation.navigate("MakeReserve")} />
         <View style={{gap:8}}>
           <UiText size={'small'}>Quieres ver tus reservas anteriores?</UiText>
           <TouchableOpacity onPress={() => navigation.navigate("")}>

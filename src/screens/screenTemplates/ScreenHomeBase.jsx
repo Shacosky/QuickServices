@@ -5,10 +5,12 @@ import HeaderLogo from "../../components/HeaderLogo";
 import BottomNav from "../../components/BottomNav";
 import colors from "../../assets/colors/colors";
 
-export const ScreenHomeBase = ({ children, complete, style }) => {
+export const ScreenHomeBase = ({ children, complete, style ,dark}) => {
   const ScreenBaseStyle = [styles.container, style];
   return (
     <View style={ScreenBaseStyle}>
+            <StatusBar style={dark?"light":"dark"} />
+
       <SafeAreaView
         style={{
           paddingTop: Platform.OS === "android" && 40,
