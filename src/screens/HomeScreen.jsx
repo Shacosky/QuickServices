@@ -1,13 +1,87 @@
 import React from "react";
-import { ScreenBase } from "./ScreenBase";
-import Onboarding from "../components/onboarding/Onboarding";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { ScreenHomeBase } from "./ScreenHomeBase";
+import UiText from "../components/common/UiText";
+import { services } from "../utilities/services";
+import { Image } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
+import UiButton from "../components/common/UiButton";
+
+const Greeting = ({ name = "Usuario" }) => {
+  return (
+    <View style={{ flexDirection: "row", gap: 8 }}>
+      <UiText color={"black"} size={"title"}>
+        Hola
+      </UiText>
+      <UiText color={"black"} fontWeight={"bold"} size={"title"}>
+        {name + "!👋"}
+      </UiText>
+    </View>
+  );
+};
 
 const HomeScreen = () => {
   return (
-    <ScreenBase>
-      <Onboarding/>
-    </ScreenBase>
+    <ScreenHomeBase>
+      <View style={styles.container}>
+        <Greeting name="DANIEL" />
+        <View style={{ gap: 4 }}>
+          <UiText color={"black"} fontWeight={"semibold"} size={"title"}>
+            Servicios
+          </UiText>
+          <UiText color={"black"} fontWeight={"light"}>
+            Escoge y programa tu servicio aquí:
+          </UiText>
+        </View>
+        <ScrollView style={{ maxHeight: "70%" }}>
+          <View style={styles.containerServices}>
+            {services.map((service, index) => {
+              return (
+                <TouchableOpacity key={index} style={styles.serviceItem}>
+                  <Image
+                    source={services[index].imgUrl}
+                    style={styles.serviceImage}
+                  ></Image>
+                  <UiText fontWeight={"light"} size={"small"}>
+                    {service.category}
+                  </UiText>
+                </TouchableOpacity>
+              );
+            })}
+          </View>
+        </ScrollView>
+        <UiButton
+          rounded
+          text="¿DESEAS OFRECER TUS SERVICIOS?"
+          color={"gray"}
+        />
+      </View>
+    </ScreenHomeBase>
   );
 };
+const styles = StyleSheet.create({
+  container: {
+    gap: 20,
+  },
+  containerServices: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+    gap: 16,
+  },
+  serviceItem: {
+    width: "28%",
+    borderRadius: 8,
+    alignItems: "center",
+    gap: 2,
+  },
+  serviceImage: {
+    width: "100%",
+    height: undefined,
+    elevation: 8,
+    aspectRatio: 1 / 1,
+    borderRadius: 16,
+  },
+});
 
 export default HomeScreen;
