@@ -1,8 +1,8 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
-import { ScreenHomeBase } from "./screenTemplates/ScreenHomeBase";
-import UiText from "../components/common/UiText";
-import UiButton from "../components/common/UiButton";
+import { ScreenHomeBase } from "../screenTemplates/ScreenHomeBase";
+import UiText from "../../components/common/UiText";
+import UiButton from "../../components/common/UiButton";
 import { useNavigation } from "@react-navigation/native";
 
 const ReservesScreen = () => {

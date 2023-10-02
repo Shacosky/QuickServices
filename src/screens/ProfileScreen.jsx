@@ -16,7 +16,7 @@ const optionsJson = [
   { name: "Cerrar sesión", iconName: "sign-out" },
 ];
 
-const ReservesScreen = () => {
+const ProfileScreen = () => {
   const navigation = useNavigation();
 
   return (
@@ -104,4 +104,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default ReservesScreen;
+export default ProfileScreen;

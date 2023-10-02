@@ -10,8 +10,8 @@ import Login from "../screens/auth/Login";
 import SignIn from "../screens/auth/SignIn";
 import ForgotPassword from "../screens/auth/ForgotPassword";
 import OnboardingScreen from "../screens/OnboardingScreen";
-import ReservesScreen from "../screens/ReservesScreen";
 import ProfileScreen from "../screens/ProfileScreen";
+import ReservesScreen from "../screens/reserves/ReservesScreen";
 
 const Stack = createStackNavigator();
 
