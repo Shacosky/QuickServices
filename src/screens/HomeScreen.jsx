@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { ScreenHomeBase } from "./ScreenHomeBase";
+import { ScreenHomeBase } from "./screenTemplates/ScreenHomeBase";
 import UiText from "../components/common/UiText";
 import { services } from "../utilities/services";
 import { Image } from "react-native";
@@ -78,7 +78,6 @@ const styles = StyleSheet.create({
   serviceImage: {
     width: "100%",
     height: undefined,
-    elevation: 8,
     aspectRatio: 1 / 1,
     borderRadius: 16,
   },
