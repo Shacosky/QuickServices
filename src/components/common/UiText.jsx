@@ -36,6 +36,8 @@ const styles = StyleSheet.create({
   text: {
     color: colors.textDefault,
     fontSize: 16,
+    fontWeight: 300,
+
   },
   bold: {
     fontWeight: "bold",
@@ -52,7 +54,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
   },
   subtitle: {
-    fontSize: 18,
+    fontSize: 20,
   },
   extraLarge: {
     fontSize: 32,
