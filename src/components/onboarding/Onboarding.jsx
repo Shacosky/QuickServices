@@ -2,55 +2,17 @@ import { View, Text, StyleSheet, Image } from "react-native";
 import React, { useEffect, useState } from "react";
 import UiText from "../common/UiText";
 import UiButton from "../common/UiButton";
-import catering from "../../assets/services/catering.webp";
-import lavadoautos from "../../assets/services/lavadoautos.webp";
-import limpiezaPiscina from "../../assets/services/limpiezaPiscina.webp";
-import remodelacion from "../../assets/services/remodelacion.webp";
-import jardineria from "../../assets/services/jardineria.webp";
-import limpieza from "../../assets/services/limpieza.webp";
-import gasfiteria from "../../assets/services/gasfiteria.webp";
 import { useNavigation } from "@react-navigation/native";
-
-const categories = [
-  {
-    category: "Limpieza de hogar",
-    imgUrl: limpieza,
-  },
-  {
-    category: "Limpia piscina",
-    imgUrl: limpiezaPiscina,
-  },
-  {
-    category: "Limpieza de Auto",
-    imgUrl: lavadoautos,
-  },
-  {
-    category: "Jardinería",
-    imgUrl: jardineria,
-  },
-  {
-    category: "Eventos",
-    imgUrl: catering,
-  },
-  {
-    category: "Gasfitería",
-    imgUrl: gasfiteria,
-  },
-  {
-    category: "Remodelación",
-    imgUrl: remodelacion,
-  },
-];
+import { services } from "../../utilities/services"; 
 
 const Onboarding = () => {
-
-  const [selectedCategory, setSelectedCategory] = useState(0);
+  const [selectedService, setSelectedService] = useState(0); 
   const navigation = useNavigation();
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setSelectedCategory((prevSelected) =>
-        prevSelected === categories.length - 1 ? 0 : prevSelected + 1
+      setSelectedService((prevSelected) =>
+        prevSelected === services.length - 1 ? 0 : prevSelected + 1
       );
     }, 2000);
 
@@ -72,23 +34,23 @@ const Onboarding = () => {
         <View style={styles.content}>
           <UiText size={"small"}>Servicios</UiText>
           <UiText size={"subtitle"} fontWeight={"bold"}>
-            {categories[selectedCategory].category}
+            {services[selectedService].service}
           </UiText>
         </View>
         <View style={styles.carousel}>
           <View style={styles.containerImage}>
             <Image
-              source={categories[selectedCategory].imgUrl}
+              source={services[selectedService].imgUrl}
               style={styles.image}
             ></Image>
           </View>
           <View style={styles.pointContainer}>
-            {categories.map((category, index) => (
+            {services.map((service, index) => (
               <View
                 key={index}
                 style={[
                   styles.point,
-                  index === selectedCategory && {
+                  index === selectedService && {
                     backgroundColor: "black",
                     paddingHorizontal: 12,
                   },
@@ -99,7 +61,7 @@ const Onboarding = () => {
         </View>
         <View style={styles.content}>
           <UiText size={"subtitle"} fontWeight={"bold"}>
-            !Hola Somos quickserivces
+            ¡Hola Somos QuickServices!
           </UiText>
           <UiText style={{ minHeight: 7 }}>
             Queremos ayudar facilitando tu vida y tiempo, brindando la
@@ -117,6 +79,7 @@ const Onboarding = () => {
     </View>
   );
 };
+
 const styles = StyleSheet.create({
   container: {
     flexDirection: "column",
@@ -153,7 +116,6 @@ const styles = StyleSheet.create({
     borderRadius: 99,
     backgroundColor: "#d8d8d8",
   },
-
   pointContainer: {
     width: "100%",
     flexDirection: "row",
