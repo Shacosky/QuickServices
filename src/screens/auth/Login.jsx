@@ -12,7 +12,7 @@ const Login = () => {
   const handleLogin = () => {};
 
   return (
-    <ScreenBase style={{ backgroundColor: "#111" }}>
+    <ScreenBase style={{ backgroundColor: "#111" }} dark>
       <View style={styles.header}>
         <TouchableOpacity
           style={styles.backButton}
