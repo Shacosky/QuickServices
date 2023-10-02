@@ -13,13 +13,16 @@ import UiTextInput from "../../components/common/inputs/UiTextInput";
 import UiPhoneInput from "../../components/common/inputs/UiPhoneInput";
 import { Checkbox } from "react-native-paper";
 import UiButton from "../../components/common/UiButton";
+import WelcomeModal from "../../components/modals/WelcomeModal";
 
 const SignIn = () => {
   const navigation = useNavigation();
   const [termsChecked, setTermsChecked] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <ScreenBase style={{ backgroundColor: "#111" }}>
+      <WelcomeModal isOpen={isOpen} setIsOpen={setIsOpen} />
       <ScrollView>
         <View style={styles.header}>
           <TouchableOpacity
@@ -67,12 +70,21 @@ const SignIn = () => {
               onPress={() => setTermsChecked(!termsChecked)}
             />
             <TouchableOpacity>
-              <UiText color="white" size="small" style={{textDecorationLine: "underline" }}>
+              <UiText
+                color="white"
+                size="small"
+                style={{ textDecorationLine: "underline" }}
+              >
                 Acepto los términos y condiciones
               </UiText>
             </TouchableOpacity>
           </View>
-          <UiButton rounded text={"INGRESAR"} color={"white"}></UiButton>
+          <UiButton
+            rounded
+            text={"INGRESAR"}
+            color={"white"}
+            onPress={() => { setIsOpen(true)}}
+          ></UiButton>
         </View>
       </ScrollView>
     </ScreenBase>
