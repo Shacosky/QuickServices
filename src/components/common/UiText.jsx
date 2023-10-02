@@ -15,6 +15,7 @@ const UiText = ({
     color === "primary" && { color: colors.primary },
     color === "white" && { color: colors.white },
     color === "black" && { color: colors.black },
+    color === "gray" && { color: colors.gray },
     size === "small" && styles.small,
     size === "title" && styles.title,
     size === "subtitle" && styles.subtitle,
@@ -59,6 +60,9 @@ const styles = StyleSheet.create({
   extraLarge: {
     fontSize: 32,
   },
+  gray:{
+    color: colors.gray,
+  }
 });
 
 export default UiText;
