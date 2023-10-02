@@ -24,6 +24,7 @@ const UiButton = ({
     secondary && styles.secondary,
     color === "white" && styles.white,
     color === "black" && styles.black,
+    color === "gray" && styles.gray,
     style,
   ];
   return (
@@ -59,6 +60,10 @@ const styles = StyleSheet.create({
   },
   disabledBtn: {
     opacity: 0.4,
+  },
+  gray: {
+    backgroundColor: "gray",
+    color: "white",
   },
 });
 
