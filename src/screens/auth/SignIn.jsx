@@ -6,7 +6,7 @@ import {
   ScrollView,
 } from "react-native";
 import React, { useState } from "react";
-import { ScreenBase } from "../ScreenBase";
+import { ScreenBase } from "../screenTemplates/ScreenBase";
 import { useNavigation } from "@react-navigation/core";
 import UiText from "../../components/common/UiText";
 import UiTextInput from "../../components/common/inputs/UiTextInput";

@@ -1,5 +1,5 @@
 import React from "react";
-import { ScreenBase } from "../ScreenBase";
+import { ScreenBase } from "../screenTemplates/ScreenBase";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { useNavigation } from "@react-navigation/core";
 import UiButton from "../../components/common/UiButton";
