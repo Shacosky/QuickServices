@@ -22,7 +22,7 @@ const Greeting = ({ name = "Usuario" }) => {
 
 const HomeScreen = () => {
   return (
-    <ScreenHomeBase>
+    <ScreenHomeBase dark>
       <View style={styles.container}>
         <Greeting name="DANIEL" />
         <View style={{ gap: 4 }}>
