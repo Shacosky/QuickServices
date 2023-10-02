@@ -12,6 +12,9 @@ import ForgotPassword from "../screens/auth/ForgotPassword";
 import OnboardingScreen from "../screens/OnboardingScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import ReservesScreen from "../screens/reserves/ReservesScreen";
+import MakeReserveScreen from "../screens/reserves/MakeReserveScreen";
+import PaymentReserveScreen from "../screens/reserves/PaymentReserveScreen";
+import MapScreen from "../screens/MapScreen";
 
 const Stack = createStackNavigator();
 
@@ -47,12 +50,22 @@ export default function MainStack() {
         ) : (
           <Stack.Screen name="Onboarding" component={OnboardingScreen} />
         )}
-        <Stack.Screen name="Home" component={HomeScreen} />
+        {/* Reserves */}
         <Stack.Screen name="Reserves" component={ReservesScreen} />
-        <Stack.Screen name="Profile" component={ProfileScreen} />
+        <Stack.Screen name="MakeReserve" component={MakeReserveScreen} />
+        <Stack.Screen name="PaymentReserve" component={PaymentReserveScreen} />
+        {/* End-Reserves */}
+
+        {/* //Auth */}
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="SignIn" component={SignIn} />
         <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
+        {/* //End-Auth */}
+
+        {/* Others */}
+        <Stack.Screen name="Profile" component={ProfileScreen} />
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Map" component={MapScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
