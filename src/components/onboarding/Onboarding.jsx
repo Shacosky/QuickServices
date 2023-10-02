@@ -34,7 +34,7 @@ const Onboarding = () => {
         <View style={styles.content}>
           <UiText size={"small"}>Servicios</UiText>
           <UiText size={"subtitle"} fontWeight={"bold"}>
-            {services[selectedService].service}
+            {services[selectedService].category}
           </UiText>
         </View>
         <View style={styles.carousel}>
