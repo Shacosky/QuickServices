@@ -9,7 +9,9 @@ import UiTextInput from "../../components/common/inputs/UiTextInput";
 const Login = () => {
   const navigation = useNavigation();
 
-  const handleLogin = () => {};
+  const handleLogin = () => {
+    navigation.navigate("Home");
+  };
 
   return (
     <ScreenBase style={{ backgroundColor: "#111" }} dark>
