@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { ScreenBase } from "../screenTemplates/ScreenBase";
 import {
   StyleSheet,
-  Text,
   TextInput,
   TouchableOpacity,
   View,
@@ -11,8 +10,10 @@ import { useNavigation } from "@react-navigation/core";
 import UiText from "../../components/common/UiText";
 import { services } from "../../utilities/services";
 import Icon from "react-native-vector-icons/FontAwesome";
+import { useRoute } from "@react-navigation/native";
 
 const Location = ({...restOfProps}) => {
+
   return (
     <TouchableOpacity style={{ flexDirection: "row", alignItems: "center", gap: 4 }} {...restOfProps}>
       <View style={{ justifyContent: "center", alignItems: "center",   width:40}}>
@@ -31,9 +32,11 @@ const Location = ({...restOfProps}) => {
 };
 
 const MakeReserveScreen = () => {
-  const [selectService, setSelectService] = useState(0);
+  const { params } = useRoute();
+  
+  const [selectService, setSelectService] = useState(services?.indexOf(params) || 0 );
   const navigation = useNavigation();
-
+  
   const goToPreviousService = () => {
     setSelectService((prevService) =>
       prevService === 0 ? services.length - 1 : prevService - 1
