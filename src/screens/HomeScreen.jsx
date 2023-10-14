@@ -6,6 +6,7 @@ import { services } from "../utilities/services";
 import { Image } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import UiButton from "../components/common/UiButton";
+import { useNavigation } from "@react-navigation/native";
 
 const Greeting = ({ name = "Usuario" }) => {
   return (
@@ -21,6 +22,11 @@ const Greeting = ({ name = "Usuario" }) => {
 };
 
 const HomeScreen = () => {
+  
+  const navigate = useNavigation();
+  const handleService = (service) => {
+    navigate.navigate("MakeReserve", service);
+  };
   return (
     <ScreenHomeBase dark>
       <View style={styles.container}>
@@ -37,9 +43,13 @@ const HomeScreen = () => {
           <View style={styles.containerServices}>
             {services.map((service, index) => {
               return (
-                <TouchableOpacity key={index} style={styles.serviceItem}>
+                <TouchableOpacity
+                  key={index}
+                  style={styles.serviceItem}
+                  onPress={() => handleService(service)}
+                >
                   <Image
-                    source={services[index].imgUrl}
+                    source={service.imgUrl}
                     style={styles.serviceImage}
                   ></Image>
                   <UiText fontWeight={"light"} size={"small"}>
