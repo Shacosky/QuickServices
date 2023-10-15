@@ -1,23 +1,27 @@
-import React from "react";
-import { View, StyleSheet, TouchableOpacity } from "react-native";
+import React, { useState } from "react";
+import { StyleSheet, TouchableOpacity, TouchableHighlight } from "react-native";
 import MapView from "react-native-maps";
 import customMap from "../utilities/customMap.json";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { useNavigation } from "@react-navigation/native";
 import { ScreenBase } from "./screenTemplates/ScreenBase";
-import UiText from "../components/common/UiText";
+import CleanerStats from "../components/CleanerStats";
 
 const MapScreen = () => {
   const navigation = useNavigation();
+  const [selectMap, setSelectMap] = useState(false);
   return (
     <ScreenBase full style={{ backgroundColor: "black" }} dark>
-      <View style={styles.container}>
-        <TouchableOpacity
-          style={styles.backButton}
-          onPress={() => navigation.goBack()}
-        >
-          <Icon name={"angle-left"} size={20} color="black" />
-        </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.backButton}
+        onPress={() => navigation.goBack()}
+      >
+        <Icon name={"angle-left"} size={20} color="black" />
+      </TouchableOpacity>
+      <TouchableHighlight
+        style={styles.container}
+        onPressIn={() => setSelectMap(true)}
+      >
         <MapView
           loadingEnabled={true}
           style={styles.map}
@@ -31,13 +35,18 @@ const MapScreen = () => {
           }}
           customMapStyle={customMap}
         />
-      </View>
-      <View style={styles.containerService}>
-        <UiText fontWeight={"bold"} size={"title"}>
-          Buscando tu cleaner
-        </UiText>
-      </View>
-      
+      </TouchableHighlight>
+
+      {selectMap ? (
+        <TouchableOpacity
+          style={styles.togleButton}
+          onPress={() => setSelectMap(!selectMap)}
+        >
+          <Icon name="arrow-down" size={16} color="gray" />
+        </TouchableOpacity>
+      ) : (
+        <CleanerStats />
+      )}
     </ScreenBase>
   );
 };
@@ -64,14 +73,15 @@ const styles = StyleSheet.create({
     position: "absolute",
     zIndex: 99,
   },
-  containerService: {
+  togleButton: {
     backgroundColor: "white",
     position: "absolute",
     bottom: 0,
-    width: "100%",
-    padding: 24,
-    borderTopEndRadius: 40,
-    borderTopStartRadius: 40,
+    alignSelf: "center",
+    padding: 12,
+    paddingHorizontal: 36,
+    borderRadius: 99,
+    marginBottom: 40,
   },
 });
 
