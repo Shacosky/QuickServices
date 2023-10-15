@@ -10,6 +10,7 @@ const UiButton = ({
   secondary,
   color,
   rounded,
+  children,
   ...restOfProps
 }) => {
   const textStyles = [
@@ -30,6 +31,7 @@ const UiButton = ({
   return (
     <TouchableOpacity style={buttonStyles} onPress={onPress} {...restOfProps}>
       <Text style={textStyles}>{text}</Text>
+      {children}
     </TouchableOpacity>
   );
 };
@@ -43,6 +45,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     elevation: 1,
     backgroundColor: "black",
+    flexDirection: "row",
+    gap: 8,
   },
   primary: {
     backgroundColor: colors.primary,
