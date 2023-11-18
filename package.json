@@ -1,5 +1,5 @@
 {
-  "name": "quickservice",
+  "name": "quickservices",
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
@@ -19,7 +19,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.11.0",
-    "react-native": "0.72.6",
+    "react-native": "0.72.5",
     "react-native-gesture-handler": "~2.12.0",
     "react-native-maps": "^1.7.1",
     "react-native-paper": "^5.8.0",
