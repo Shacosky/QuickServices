@@ -24,7 +24,6 @@ Este proyecto tiene como objetivo proporcionar una plataforma de entrega rápida
 ## Requisitos de instalación
 
 - Node.js - [Descargar e instalar Node.js](https://nodejs.org/)
-- MongoDB - [Descargar e instalar MongoDB](https://www.mongodb.com/)
 q
 ## Instrucciones de instalación
 
