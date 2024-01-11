@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "QuickService",
+    "name": "QuickServices",
     "slug": "QuickService",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -21,10 +21,21 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#000"
-      }
+      },
+      "config":{
+        "googleMaps":{
+          "apiKey": "AIzaSyAzeGeOfgeg-VCZAl9kAAlbNdIe0i4_eGM"
+        }
+      },
+      "package": "com.garyhl321.QuickService"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "a98890d9-7171-4105-bc98-d93a570c3d77"
+      }
     }
   }
 }
