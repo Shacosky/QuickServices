@@ -3,7 +3,6 @@ import { ScreenBase } from '../screenTemplates/ScreenBase'
 import {
   StyleSheet,
   Text,
-  TextInput,
   TouchableOpacity,
   View,
 } from 'react-native'
@@ -39,6 +38,8 @@ const Location = ({ ...restOfProps }) => {
 
 const MakeReserveScreen = () => {
   const { params } = useRoute()
+
+  const navigate = useNavigation()
 
   const [selectService, setSelectService] = useState(
     services?.indexOf(params) > 0 ? services?.indexOf(params) : 1,
@@ -96,7 +97,7 @@ const MakeReserveScreen = () => {
           <TouchableOpacity className=" px-4 py-1">
             <Text className="text-white text-xl">Cancelar</Text>
           </TouchableOpacity >
-          <TouchableOpacity className=" px-4 py-1">
+          <TouchableOpacity onPress={() => navigate.navigate("ServiceDetails")} className=" px-4 py-1">
             <Text className="text-white text-xl">OK</Text>
           </TouchableOpacity>
         </View>

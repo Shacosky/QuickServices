@@ -15,6 +15,8 @@ import ReservesScreen from "../screens/reserves/ReservesScreen";
 import MakeReserveScreen from "../screens/reserves/MakeReserveScreen";
 import PaymentReserveScreen from "../screens/reserves/PaymentReserveScreen";
 import MapScreen from "../screens/MapScreen";
+import YourLocation from "../screens/reserves/YourLocation";
+import ServiceDetails from "../screens/reserves/ServiceDetails";
 
 const Stack = createStackNavigator();
 
@@ -55,6 +57,8 @@ export default function MainStack() {
         <Stack.Screen name="Reserves" component={ReservesScreen} />
         <Stack.Screen name="MakeReserve" component={MakeReserveScreen} />
         <Stack.Screen name="PaymentReserve" component={PaymentReserveScreen} />
+        <Stack.Screen name="YourLocation" component={YourLocation} />
+        <Stack.Screen name="ServiceDetails" component={ServiceDetails} />
         {/* End-Reserves */}
 
         {/* //Auth */}

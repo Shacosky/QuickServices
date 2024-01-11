@@ -11,7 +11,7 @@ export default function BackButton() {
         className="bg-white h-8 w-8 rounded-full items-center justify-center aspect-square"
         onPress={() => navigation.goBack()}
       >
-        <UiIcon name="left" size={18} color={'#000'} />
+        <UiIcon name="angle-left" size={18} color={'#000'} />
       </TouchableOpacity>
     </View>
   )
