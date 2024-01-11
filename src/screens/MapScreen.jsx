@@ -6,6 +6,7 @@ import Icon from "react-native-vector-icons/FontAwesome";
 import { useNavigation } from "@react-navigation/native";
 import { ScreenBase } from "./screenTemplates/ScreenBase";
 import CleanerStats from "../components/CleanerStats";
+import {PROVIDER_GOOGLE} from 'react-native-maps'
 
 const MapScreen = () => {
   const navigation = useNavigation();
@@ -23,6 +24,7 @@ const MapScreen = () => {
         onPressIn={() => setSelectMap(true)}
       >
         <MapView
+        provider={PROVIDER_GOOGLE}
           loadingEnabled={true}
           style={styles.map}
           showsBuildings={false}

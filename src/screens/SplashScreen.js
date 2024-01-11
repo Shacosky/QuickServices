@@ -14,7 +14,7 @@ const SplashScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Image source={require('./splash_logo.png')} style={styles.logo} />
+      <Image source={require('../../assets/splash.png')} style={styles.logo} />
     </View>
   );
 };
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#ffffff',
+    backgroundColor: '#000000',
   },
   logo: {
     width: 200,

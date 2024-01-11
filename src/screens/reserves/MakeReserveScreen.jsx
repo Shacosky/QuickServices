@@ -34,7 +34,7 @@ const Location = ({...restOfProps}) => {
 const MakeReserveScreen = () => {
   const { params } = useRoute();
   
-  const [selectService, setSelectService] = useState(services?.indexOf(params) || 0 );
+  const [selectService, setSelectService] = useState(services?.indexOf(params) > 0? services?.indexOf(params) : 1 );
   const navigation = useNavigation();
   
   const goToPreviousService = () => {
@@ -72,7 +72,7 @@ const MakeReserveScreen = () => {
             <Icon name={"angle-left"} size={24} color="white" />
           </TouchableOpacity>
           <UiText size="small" color={"white"}>
-            {services[selectService].category}
+            {services[selectService]?.category}
           </UiText>
           <TouchableOpacity
             style={styles.iconContainer}
