@@ -57,6 +57,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     alignItems: "center",
     flexDirection: "row",
+    zIndex: 999,
   },
   iconBtn: {
     alignItems: "center",

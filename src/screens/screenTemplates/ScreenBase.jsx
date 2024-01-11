@@ -1,29 +1,14 @@
-import React from "react";
-import { StyleSheet, View } from "react-native";
-import { StatusBar } from "expo-status-bar";
+import React from 'react'
+import { SafeAreaView, View } from 'react-native'
+import { StatusBar } from 'expo-status-bar'
 
-export const ScreenBase = ({ children, complete, style, full, dark}) => {
-  const ScreenBaseStyle = [styles.container, style];
+export const ScreenBase = ({ children, complete,  full, dark }) => {
   return (
-    <View style={ScreenBaseStyle}>
-      <StatusBar style={dark?"light":"dark"} />
-      <View
-        style={[
-          {
-            paddingTop: Platform.OS === "android" && 40,
-            marginBottom: complete ? 0 : 0,
-            paddingHorizontal: 28,
-          },
-          full && {paddingHorizontal: 0, paddingTop: 0, marginBottom: 0},
-        ]}
-      >
-        {children}
-      </View>
-    </View>
-  );
-};
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+    <SafeAreaView className={`flex-1 ${Platform.OS === 'android' && 'pt-8 '}  ${dark ? "bg-black" : "bg-white"}`}>
+      <StatusBar style={dark ? 'light' : 'dark'} />
+
+      <View className={`flex-1 ${!full && 'px-10'} `}>{children}</View>
+    </SafeAreaView>
+  )
+}
+

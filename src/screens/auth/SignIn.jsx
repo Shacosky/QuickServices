@@ -21,7 +21,7 @@ const SignIn = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <ScreenBase style={{ backgroundColor: "#111" }}>
+    <ScreenBase dark>
       <WelcomeModal isOpen={isOpen} setIsOpen={setIsOpen} />
       <ScrollView>
         <View style={styles.header}>

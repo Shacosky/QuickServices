@@ -10,11 +10,12 @@ const WelcomeModal = ({isOpen, setIsOpen}) => {
     <Modal visible={isOpen} transparent={true} animationType="fade">
       <View style={styles.container}>
         <View style={styles.content}>
-          <UiText fontWeight={"bold"}>FELICIDADES!</UiText>
-          <UiText>
+          <Text className="font-bold text-center text-xl">FELICIDADES!</Text>
+          <Text className="text-center">
+
             Ya eres parte de nuestra comunidad en QuickServices, esperamos que
             disfrutes la experiencia.
-          </UiText>
+          </Text>
           <UiButton
             color={"black"}
             text={"CONTINUAR"}

@@ -21,6 +21,7 @@ const Stack = createStackNavigator();
 const customScreenOptions = {
   ...TransitionPresets.FadeFromBottomAndroid,
   gestureDirection: "vertical",
+  
 };
 
 export default function MainStack() {
