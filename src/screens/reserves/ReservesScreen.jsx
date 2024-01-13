@@ -1,11 +1,11 @@
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import React from 'react';
-import { ScreenHomeBase } from '../screenTemplates/ScreenHomeBase';
-import UiText from '../../components/common/UiText';
-import UiButton from '../../components/common/UiButton';
-import { useNavigation } from '@react-navigation/native';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import { ScrollView } from 'react-native-gesture-handler';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
+import React from 'react'
+import { ScreenHomeBase } from '../screenTemplates/ScreenHomeBase'
+import UiText from '../../components/common/UiText'
+import UiButton from '../../components/common/UiButton'
+import { useNavigation } from '@react-navigation/native'
+import Icon from 'react-native-vector-icons/FontAwesome'
+import { ScrollView } from 'react-native-gesture-handler'
 
 const dataArray = [
   {
@@ -64,55 +64,45 @@ const dataArray = [
     cost: 'Costo 3',
     status: 'busqueda',
   },
-];
+]
 
 const getStatusIcon = (reserve) => {
   const statusMap = {
-    completado: { icon: 'check', text: 'Completado' },
-    proceso: { icon: 'repeat', text: 'En proceso' },
-    busqueda: { icon: 'search', text: 'En búsqueda' },
-  };
+    completado: { icon: 'repeat', text: 'Repetir ' },
+    proceso: { icon: 'repeat', text: 'Aceptada' },
+    busqueda: { icon: 'search', text: 'En búsquedas' },
+  }
 
-  const status = statusMap[reserve.status] || { icon: 'search', text: 'En búsqueda' };
+  const status = statusMap[reserve.status] || {
+    icon: 'search',
+    text: 'En búsqueda',
+  }
   return (
     <View className="w-full items-center justify-center p-2 flex-row">
-        
-        {reserve.status === 'completado' && (
-          <>
-            <Icon name={status.icon} size={16} color="white" />
-            <Text className="ml-2 text-white text-sm">{status.text}</Text>
-          </>
-        )}
-        {reserve.status === 'proceso' && (
-          <>
-            <Icon name={status.icon} size={16} color="white" />
-            <Text className="ml-2 text-white text-sm">{status.text}</Text>
-          </>
-        )}
-        {reserve.status === 'busqueda' && (
-          <>
-            <Icon name={status.icon} size={16} color="white" />
-            <Text className="ml-2 text-white text-sm">{status.text}</Text>
-          </>
-        )}
-       
-     
+      {reserve.status === 'completado' && (
+        <>
+          <Icon name={status.icon} size={16} color="white" />
+          <Text className="ml-2 text-white text-sm">{status.text}</Text>
+        </>
+      )}
+      {reserve.status === 'proceso' && (
+        <>
+          <Icon name={status.icon} size={16} color="white" />
+          <Text className="ml-2 text-white text-sm">{status.text}</Text>
+        </>
+      )}
+      {reserve.status === 'busqueda' && (
+        <>
+          <Icon name={status.icon} size={16} color="white" />
+          <Text className="ml-2 text-white text-sm">{status.text}</Text>
+        </>
+      )}
     </View>
-  );
-};
+  )
+}
 
 const ReserveBlock = ({ reserve }) => {
-  const getStatusColor = () => {
-    if (reserve.status === 'completado') {
-      return 'bg-black';
-    } else if (reserve.status === 'busqueda') {
-      return 'bg-gray-500';
-    } else if (reserve.status === 'proceso') {
-      return 'bg-yellow-500';
-    } else {
-      return ' bg-gray-500';
-    }
-  };
+  const navigation = useNavigation()
 
   return (
     <View className={`w-full flex-row items-center mt-2 -z-1 my-2 `}>
@@ -120,22 +110,37 @@ const ReserveBlock = ({ reserve }) => {
         <Icon name="map-marker" size={24} color={'black'} />
       </View>
       <View className="w-6/12 ">
-        <Text className="font-bold text-lg">{reserve.location}</Text>
-        <Text className="text-sm">{reserve.address}</Text>
-        <Text className="text-sm">{reserve.date}</Text>
-        <Text className="text-sm">{reserve.cost}</Text>
+        <Text className=" font-semibold">{reserve.location}</Text>
+        <Text className="text-xs">{reserve.address}</Text>
+        <Text className="text-xs">{reserve.date}</Text>
+        <Text className="text-xs">{reserve.cost}</Text>
       </View>
       <View className="w-5/12 rounded items-center justify-center">
-        <TouchableOpacity className={`rounded w-full ${reserve.status === "proceso" && " bg-red-500 "} ${reserve.status=="busqueda" && "bg-neutral-600 " } ${reserve.status ==="completado" && "bg-black" }`}>
-        {getStatusIcon (reserve)}        
+        <TouchableOpacity
+          onPress={() =>
+            navigation.navigate(
+              reserve.status === 'completado'
+                ? 'MakeReserve'
+                : reserve.status === 'en busqueda'
+                ? ''
+                : 'RequestDetailsQuick',
+            )
+          }
+          className={`rounded-full w-full ${
+            reserve.status === 'proceso' && ' bg-red-500 '
+          } ${reserve.status == 'busqueda' && 'bg-neutral-600 '} ${
+            reserve.status === 'completado' && 'bg-black'
+          }`}
+        >
+          {getStatusIcon(reserve)}
         </TouchableOpacity>
       </View>
     </View>
-  );
-};
+  )
+}
 
 const ReservesScreen = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation()
   return (
     <ScreenHomeBase>
       <View style={styles.container}>
@@ -168,14 +173,14 @@ const ReservesScreen = () => {
         </View>
       </View>
     </ScreenHomeBase>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
-    flex:1,
+    flex: 1,
     gap: 24,
   },
-});
+})
 
-export default ReservesScreen;
+export default ReservesScreen
