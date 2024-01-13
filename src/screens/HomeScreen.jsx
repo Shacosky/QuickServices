@@ -65,11 +65,7 @@ const HomeScreen = () => {
             })}
           </View>
         </ScrollView>
-        <UiButton
-          rounded
-          text="¿DESEAS OFRECER TUS SERVICIOS?"
-          color={'gray'}
-        />
+        
       </View>
     </ScreenHomeBase>
   )

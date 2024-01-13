@@ -10,7 +10,7 @@ const ForgotPassword = () => {
   const navigation = useNavigation();
 
   return (
-    <ScreenBase style={{ backgroundColor: "#111" }}>
+    <ScreenBase dark>
       <View style={styles.header}>
         <TouchableOpacity
           style={styles.backButton}
