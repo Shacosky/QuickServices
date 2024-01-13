@@ -1,66 +1,28 @@
 import React from "react";
 import { ScreenBase } from "../screenTemplates/ScreenBase";
-import { StyleSheet, TextInput, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { useNavigation } from "@react-navigation/core";
 import UiText from "../../components/common/UiText";
 import Icon from "react-native-vector-icons/FontAwesome";
 import UiButton from "../../components/common/UiButton";
+import BackButton from "../../components/common/buttons/BackButton";
 
 const PaymentReserveScreen = () => {
   const navigation = useNavigation();
 
   return (
-    <ScreenBase style={{ backgroundColor: "#111" }}>
+    <ScreenBase dark>
+      <BackButton/>
       <View style={{ gap: 28 }}>
-        <View style={styles.header}>
-          <TouchableOpacity
-            style={styles.backButton}
-            onPress={() => navigation.goBack()}
-          >
-            <Icon name={"angle-left"} size={20} color="black" />
-          </TouchableOpacity>
-        </View>
-        <UiText size="title" color="white" fontWeight={"bold"}>
-          ¿Qué fecha quieres programar tu servicio?
-        </UiText>
-        <TouchableOpacity
-          style={{ flexDirection: "row", alignItems: "center", gap: 4 }}
-        >
-          <View
-            style={{
-              justifyContent: "center",
-              alignItems: "center",
-              width: 40,
-            }}
-          >
-            <Icon name={"map-marker"} size={24} color="white" />
-          </View>
-          <View>
-            <UiText size="small" color="white" style={{ opacity: 1 }}>
-              Los Oficios 1598
-            </UiText>
-          </View>
-        </TouchableOpacity>
-        <View style={{ alignItems: "center" }}>
-          <UiText size="subtitle" color="white">
-            Miércoles,16 de ago.
-          </UiText>
-          <View
-            style={{
-              width: "100%",
-              height: 2,
-              backgroundColor: "gray",
-              marginVertical: 8,
-            }}
-          />
-          <UiText size="subtitle" color="white">
-            18:10
-          </UiText>
-        </View>
+        
+    
+        <Text className="text-white text-2xl mt-8 font-bold">
+          Opciones de pago
+
+        </Text>
+        
         <View style={{ gap: 16 }}>
-          <UiText size="title" color="white" fontWeight={"bold"}>
-            Opciones de pago
-          </UiText>
+          <Text className="text-white">método de pago </Text>
           <UiText color="white">💵 Efectivo</UiText>
           <UiText color="white">🪪 Tarjeta de crédito o debito</UiText>
 
@@ -71,6 +33,7 @@ const PaymentReserveScreen = () => {
             <TextInput
               placeholder="Ingresa el código de tu cupón"
               placeholderTextColor={"white"}
+              className="w-full  text-white"
             ></TextInput>
             <View
               style={{
@@ -85,7 +48,7 @@ const PaymentReserveScreen = () => {
             </UiText>
           </View>
         </View>
-        <UiButton text="CONTINUAR" color="white" style={{marginTop:28}} rounded onPress={() => navigation.navigate("Map")}/>
+        <UiButton text="CONTINUAR" color="white" style={{marginTop:28}} rounded onPress={() => navigation.navigate("RequestDetails")}/>
       </View>
     </ScreenBase>
   );
