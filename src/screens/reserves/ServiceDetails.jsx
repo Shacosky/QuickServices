@@ -25,18 +25,20 @@ export default function ServiceDetails() {
       <View className="gap-4">
         <Text className="text-white text-lg">¿Dónde vives?</Text>
         <View className="flex-row gap-2">
-          <Checkbox status={home ? 'checked' : 'unchecked'} color="white" />
+          <Checkbox
+          onPress={() => setHome(!home)} status={home ? 'checked' : 'unchecked'} color="white" />
           <Text className="text-white">Casa</Text>
         </View>
         <View className="flex-row gap-2">
           <Checkbox
+          onPress={() => setDepartament(!departament)}
             status={departament ? 'checked' : 'unchecked'}
             color="white"
           />
           <Text className="text-white ">Departamento</Text>
         </View>
-        <Text className="text-white  text-lg">
-          Describe la cantidad de espacio y su m2{' '}
+        <Text className="text-white  ">
+          Describe la cantidad de espacio y su m2
         </Text>
         <View className="relative w-100">
           <TextInput
@@ -49,11 +51,9 @@ export default function ServiceDetails() {
       </View>
       <TouchableOpacity
         className="bg-white my-12 h-12 w-full rounded-full items-center justify-center"
-        onPress={() => navigate(' PaymentReserve')}
+        onPress={() => navigate('PaymentReserve')}
       >
-        <Text className="text-black text-lg uppercase font-semibold">
-          Continuar
-        </Text>
+        <Text className="text-black  uppercase font-semibold">Continuar</Text>
       </TouchableOpacity>
     </ScreenBase>
   )
