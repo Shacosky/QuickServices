@@ -9,7 +9,7 @@ import { useNavigation } from '@react-navigation/native'
 const Location = () => {
   const navigate = useNavigation()
   return (
-    <TouchableOpacity className="w-full flex-row my-4 items-center" onPress={() => navigate.navigate("MakeReserve")}>
+    <TouchableOpacity className="w-full flex-row my-4 items-center" onPress={() => navigate.navigate("ServiceDetails")}>
       <View className="mx-4">
         <UiIcon name="map-marker" color="white" size={24} />
       </View>
