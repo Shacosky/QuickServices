@@ -97,7 +97,7 @@ const MakeReserveScreen = () => {
           <TouchableOpacity className=" px-4 py-1">
             <Text className="text-white text-xl">Cancelar</Text>
           </TouchableOpacity >
-          <TouchableOpacity onPress={() => navigate.navigate("ServiceDetails")} className=" px-4 py-1">
+          <TouchableOpacity onPress={() => navigate.navigate("YourLocation")} className=" px-4 py-1">
             <Text className="text-white text-xl">OK</Text>
           </TouchableOpacity>
         </View>
