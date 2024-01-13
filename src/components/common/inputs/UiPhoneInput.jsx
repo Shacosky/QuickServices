@@ -3,7 +3,7 @@ import React from "react";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import UiText from "../UiText";
 
-const UiPhoneInput = ({ style, placeholderText, ...restOfProps }) => {
+export const UiPhoneInput = ({ style, placeholderText, ...restOfProps }) => {
   const containerInputStyles = [styles.containerInput, style];
 
   return (
@@ -52,4 +52,3 @@ const styles = StyleSheet.create({
   },
 });
 
-export default UiPhoneInput;

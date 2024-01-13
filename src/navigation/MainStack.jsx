@@ -10,7 +10,6 @@ import Login from "../screens/auth/Login";
 import SignIn from "../screens/auth/SignIn";
 import ForgotPassword from "../screens/auth/ForgotPassword";
 import OnboardingScreen from "../screens/OnboardingScreen";
-import ProfileScreen from "../screens/ProfileScreen";
 import ReservesScreen from "../screens/reserves/ReservesScreen";
 import MakeReserveScreen from "../screens/reserves/MakeReserveScreen";
 import PaymentReserveScreen from "../screens/reserves/PaymentReserveScreen";
@@ -19,11 +18,12 @@ import YourLocation from "../screens/reserves/YourLocation";
 import ServiceDetails from "../screens/reserves/ServiceDetails";
 import RequestDetails from "../screens/reserves/RequestDetails";
 import RequestDetailsQuick from "../screens/reserves/RequestDetailsQuick";
-import DeviceSetings from "../screens/userSettings/DeviceSetings";
 import MyCards from "../screens/userSettings/MyCards";
 import MyCoupons from "../screens/userSettings/MyCoupons";
 import MyData from "../screens/userSettings/MyData";
 import PreferredLocations from "../screens/userSettings/PreferredLocations";
+import ProfileScreen from "../screens/userSettings/ProfileScreen";
+import DeviceSettings from "../screens/userSettings/DeviceSettings";
 
 const Stack = createStackNavigator();
 
@@ -83,8 +83,7 @@ export default function MainStack() {
         <Stack.Screen name="Map" component={MapScreen} />
 
         {/* User Settings */}
-        
-        <Stack.Screen name="DeviceSettins" component={DeviceSetings} />
+        <Stack.Screen name="DeviceSettings" component={DeviceSettings} />
         <Stack.Screen name="MyCards" component={MyCards} />
         <Stack.Screen name="MyCoupons" component={MyCoupons} />
         <Stack.Screen name="MyData" component={MyData} />

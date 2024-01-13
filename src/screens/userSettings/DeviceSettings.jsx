@@ -3,7 +3,7 @@ import React from 'react'
 import { ScreenBase } from '../screenTemplates/ScreenBase'
 import BackButton from '../../components/common/buttons/BackButton'
 
-export default function DeviceSetings() {
+export default function DeviceSettings() {
   return (
     <ScreenBase dark>
         <BackButton/>
