@@ -44,7 +44,7 @@ const HomeScreen = () => {
             Escoge y programa tu servicio aquí:
           </UiText>
         </View>
-        <ScrollView style={{ maxHeight: '70%' }}>
+        <ScrollView style={{ maxHeight: '90%' }}>
           <View style={styles.containerServices}>
             {services.map((service, index) => {
               return (

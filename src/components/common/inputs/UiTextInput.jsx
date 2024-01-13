@@ -9,7 +9,7 @@ const UiTextInput = ({ style, placeholderText, ...restOfProps }) => {
 
   return (
     <View style={containerInputStyles}>
-      <Text style={styles.placeholderText}>{placeholderText}</Text>
+      <Text style={styles.placeholderTextStyles}>{placeholderText}</Text>
       <TextInput
         style={styles.input}
         placeholderTextColor={"gray"}
@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
   input: {
     width: "100%",
     color: "white",
+    
   },
   containerInput: {
     borderRadius: 99,
@@ -32,10 +33,10 @@ const styles = StyleSheet.create({
     paddingTop:18,
     paddingBottom:10,
   },
-  placeholderText: {
+  placeholderTextStyles: {
     color: "gray",
     position: "absolute",
-    marginHorizontal: 24,
+    marginLeft: 24,
     marginVertical: 4,
     fontSize: 12,
   },

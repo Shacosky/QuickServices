@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 import { ScreenHomeBase } from '../screenTemplates/ScreenHomeBase'
 import UiText from '../../components/common/UiText'
+import CloseAccount from '../../components/modals/CloseAcount'
 
 const optionsJson = [
   { name: 'Mis datos', iconName: 'user', page:"MyData" },
@@ -22,6 +23,8 @@ const ProfileScreen = () => {
   const handleLogout = () => {
     navigation.navigate('Login')
   }
+
+   const [CloseAccountIsOpen, setCloseAccountIsOpen] = useState(false)
 
   return (
     <ScreenHomeBase>
@@ -64,7 +67,7 @@ const ProfileScreen = () => {
                   </UiText>
                 </View>
               </TouchableOpacity>
-          <TouchableOpacity style={[styles.option, { marginTop: 16 }]}>
+          <TouchableOpacity style={[styles.option, { marginTop: 16 }]} onPress={()=> setCloseAccountIsOpen(true)}>
             <View style={styles.icon}>
               <Icon name={'user-times'} size={20} color="red" />
             </View>
@@ -80,6 +83,7 @@ const ProfileScreen = () => {
           </TouchableOpacity>
         </View>
       </View>
+      <CloseAccount isOpen={CloseAccountIsOpen} setIsOpen={setCloseAccountIsOpen} />
     </ScreenHomeBase>
   )
 }
