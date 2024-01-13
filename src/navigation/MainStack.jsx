@@ -7,7 +7,6 @@ import { NavigationContainer } from "@react-navigation/native";
 import HomeScreen from "../screens/HomeScreen";
 import SplashScreen from "../screens/SplashScreen";
 import Login from "../screens/auth/Login";
-import SignIn from "../screens/auth/SignIn";
 import ForgotPassword from "../screens/auth/ForgotPassword";
 import OnboardingScreen from "../screens/OnboardingScreen";
 import ReservesScreen from "../screens/reserves/ReservesScreen";
@@ -24,6 +23,7 @@ import MyData from "../screens/userSettings/MyData";
 import PreferredLocations from "../screens/userSettings/PreferredLocations";
 import ProfileScreen from "../screens/userSettings/ProfileScreen";
 import DeviceSettings from "../screens/userSettings/DeviceSettings";
+import { SignIn } from "../screens/auth/SignIn";
 
 const Stack = createStackNavigator();
 

@@ -10,12 +10,12 @@ import { ScreenBase } from "../screenTemplates/ScreenBase";
 import { useNavigation } from "@react-navigation/core";
 import UiText from "../../components/common/UiText";
 import UiTextInput from "../../components/common/inputs/UiTextInput";
-import UiPhoneInput from "../../components/common/inputs/UiPhoneInput";
 import { Checkbox } from "react-native-paper";
 import UiButton from "../../components/common/UiButton";
 import WelcomeModal from "../../components/modals/WelcomeModal";
+import { UiPhoneInput } from "../../components/common/inputs/UiPhoneInput";
 
-const SignIn = () => {
+export const SignIn = () => {
   const navigation = useNavigation();
   const [termsChecked, setTermsChecked] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -40,6 +40,8 @@ const SignIn = () => {
           QuickServices
         </UiText>
         <View style={styles.formSignIn}>
+
+
           <UiText fontWeight={"semibold"} size={"subtitle"} color="white">
             Registra tus datos
           </UiText>
@@ -55,7 +57,7 @@ const SignIn = () => {
             placeholderText={"Confirmar contraseña"}
             secureTextEntry
           />
-          <UiPhoneInput placeholderText={"Número de teléfono"} />
+          <UiPhoneInput  placeholderText={"Número de teléfono"} />
           <View
             style={{
               flexDirection: "row",
@@ -85,6 +87,8 @@ const SignIn = () => {
             color={"white"}
             onPress={() => { setIsOpen(true)}}
           ></UiButton>
+
+          
         </View>
       </ScrollView>
     </ScreenBase>
@@ -106,4 +110,3 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
 });
-export default SignIn;
